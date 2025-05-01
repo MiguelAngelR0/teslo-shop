@@ -1,0 +1,23 @@
+<h1 class="text-3xl font-bold font-['comfortaa']">Todos los productos </h1>
+<h2 class="text-xl mb-5 font-['comfortaa']">Para todos los gustos</h2>
+
+
+
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 mt-2 gap-4">
+
+
+  @for (product of productResource.value()?.products; track $index) {
+    <product-card [product]="product"></product-card>
+
+  }
+
+  @empty {
+    <p>Not found products</p>
+  }
+
+</div>
+
+<app-pagination [pages] = "productResource.value()?.pages ?? 0"
+[currentPage]="paginationService.currentPage()"
+></app-pagination>
+

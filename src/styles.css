@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+@font-face {
+  font-family: 'comfortaa';
+  src: url('./assets/fonts/Comfortaa-VariableFont_wght.ttf') format('truetype');
+}
+
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark, dracula;
+}
+
+@theme {
+  --animate-fadeIn: fadeIn 0.3s ease-in-out ;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
