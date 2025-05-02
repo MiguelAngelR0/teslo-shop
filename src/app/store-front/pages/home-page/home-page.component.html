@@ -7,7 +7,7 @@
 </div>
 }
 
-
+@if(!productResource.isLoading()){
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 mt-2 gap-4">
 
 
@@ -25,4 +25,4 @@
 <app-pagination [pages] = "productResource.value()?.pages ?? 0"
 [currentPage]="paginationService.currentPage()"
 ></app-pagination>
-
+}
