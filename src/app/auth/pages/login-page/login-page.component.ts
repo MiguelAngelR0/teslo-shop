@@ -48,7 +48,4 @@ export class LoginPageComponent {
 
   //Check Authentication
 
-  //Register
-
-  //Logout
  }

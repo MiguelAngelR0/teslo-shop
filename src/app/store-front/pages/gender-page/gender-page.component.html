@@ -2,6 +2,11 @@
   <span class="text-accent">{{gender()}}</span>
 </h1>
 <h2 class="text-xl mb-5 font-['comfortaa']">Para todos los gustos</h2>
+@if (productResource.isLoading()){
+  <div class="flex justify-center items-center my-10">
+    <span class="loading loading-spinner loading-xl text-primary"></span>
+  </div>
+  }
 
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 mt-2 gap-4">
 

@@ -48,6 +48,17 @@ export class AuthService {
       catchError((error : any) => this.HandleAuthError(error)));
   }
 
+  register(email: string, password: string, fullName:string): Observable<boolean>{
+    console.log('objetoo del register',{email,password,fullName})
+    return this.http.post<AuthResponse>(`${baseUrl}/auth/register`,{
+      email:email,
+      password:password,
+      fullName:fullName
+    }).pipe(
+      map(resp => this.HandleAuthSucess(resp)),
+      catchError((error : any) => this.HandleAuthError(error)));
+  }
+
   checkStatus(): Observable<boolean> {
     const token = localStorage.getItem('token');
     if(!token){

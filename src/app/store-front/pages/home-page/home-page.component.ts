@@ -6,6 +6,7 @@ import {rxResource} from '@angular/core/rxjs-interop'
 import { PaginationComponent } from '@shared/components/pagination/pagination.component';
 import { productsService } from '@products/services/products.service';
 import { PaginationService } from '@shared/components/pagination/pagination.service';
+import { delay } from 'rxjs';
 
 
 @Component({
@@ -24,7 +25,9 @@ export class HomePageComponent {
     loader: ({request}) => {
       return this.productsService.getProducts({
         offset: request.page * 9,
-      });
+      }).pipe(
+        delay(1500)
+      )
     }
   })
 
