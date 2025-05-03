@@ -1,21 +1,26 @@
 <div class="card bg-base-100 w-full shadow-sm animate-fadeIn h-full">
   <figure>
-    <img
-      [src]='product().images | productImage'
-      [alt]="product().title" />
+    <img [src]='product().images | productImage' [alt]="product().title" />
   </figure>
   <div class="card-body flex flex-col justify-between">
     <div>
-      <h2 class="card-title font-['comfortaa'] text-accent text-xl hover:underline cursor-pointer" [routerLink]="['/product', product().slug]">{{product().title}}</h2>
+      <h2 class="card-title font-['comfortaa'] text-accent text-xl hover:underline cursor-pointer"
+        [routerLink]="['/product', product().slug]">{{product().title}}</h2>
       <p>{{product().description | slice : 0 : 70}}... </p>
     </div>
-    <div class="card-actions mt-auto justify-end">
-      <a
-        class="Link link-accent"
-        [routerLink]="['/product', product().slug]">Go to product</a>
+    <div class="card-actions flex justify-between">
+      <div class="mt-auto">
+        @for (tag of product().tags; track tag) {
+        <div class="badge badge-soft badge-primary">
+          {{ tag }}</div>
+        }
+      </div>
+      <div class="mt-auto">
+        <a class="Link link-accent" [routerLink]="['/product', product().slug]">Go to product</a>
+      </div>
     </div>
   </div>
+
+
+
 </div>
-
-
-

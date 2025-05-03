@@ -46,6 +46,7 @@
       <button class="btn btn-error" (click)="authService.logout()">Logout</button>
     }@else if (authService.authstatus() == 'not-authenticated') {
       <a routerLink="/auth/login" class="btn btn-secondary">Login</a>
+      <a routerLink="/auth/register" class="btn btn-primary">Register</a>
     }@else {
       <a class="btn btn-ghost">...</a>
     }

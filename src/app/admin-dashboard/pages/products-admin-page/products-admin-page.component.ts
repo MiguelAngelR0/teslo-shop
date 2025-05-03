@@ -5,6 +5,7 @@ import { productsService } from '@products/services/products.service';
 import { PaginationService } from '@shared/components/pagination/pagination.service';
 import { PaginationComponent } from "../../../shared/components/pagination/pagination.component";
 import { RouterLink } from '@angular/router';
+import { FooterComponent } from "../../../shared/components/footer/footer.component";
 
 @Component({
   selector: 'app-products-admin-page',

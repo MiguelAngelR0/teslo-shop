@@ -1,8 +1,11 @@
-<!-- Navbar -->
- <front-navbar></front-navbar>
+<!-- app.component.html -->
+<div class="flex flex-col min-h-svh">
+  <front-navbar></front-navbar>
 
+  <main class="flex-1 container mx-auto">
+    <router-outlet></router-outlet>
+  </main>
 
-<section class="container mx-auto">
-  <router-outlet></router-outlet>
-</section>
+  <app-footer></app-footer>
+</div>
 

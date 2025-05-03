@@ -3,6 +3,7 @@ import { rxResource } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { productsService } from '../../../products/services/products.service';
 import { ProductCarrouselComponent } from "../../../products/components/product-carrousel/product-carrousel.component";
+import { FooterComponent } from "../../../shared/components/footer/footer.component";
 
 
 @Component({

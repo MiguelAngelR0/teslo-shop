@@ -7,6 +7,7 @@ import { PaginationComponent } from '@shared/components/pagination/pagination.co
 import { productsService } from '@products/services/products.service';
 import { PaginationService } from '@shared/components/pagination/pagination.service';
 import { delay } from 'rxjs';
+import { FooterComponent } from "../../../shared/components/footer/footer.component";
 
 
 @Component({

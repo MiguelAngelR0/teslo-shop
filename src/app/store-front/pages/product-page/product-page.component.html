@@ -5,19 +5,44 @@
 
 }
 
-@if( productResource.hasValue()){
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-  <!-- Imagenes -->
+<!-- TODO Sizes y babges -->
 
+@if( productResource.hasValue()){
+<div class="m-5 grid grid-cols-1 sm:grid-cols-2 gap-2">
+  <!-- Imagenes -->
   <product-carrousel [images]="productResource.value().images"></product-carrousel>
 
 
-  <div >
+  <div class="m-3">
     <h2 class="text-2xl font-bold font-['comfortaa']">{{productResource.value().title}}</h2>
+    <div class="lg:mt-0">
+      <p class="text-xl">{{productResource.value().price}}$</p>
+    </div>
+
     <div class="divider"></div>
-    <p>
+    <!-- Sizes -->
+    <h2>Size</h2>
+    <div class="mt-2 grid grid-cols-6 gap-2">
+      @for (size of productResource.value().sizes; track size) {
+      <button type="button" class="btn btn-sm">
+      {{ size }}</button>
+      }
+    </div>
+
+    <div class="divider"></div>
+
+    <h2>Description</h2>
+    <p class=" mt-2 text-base text-gray-300">
       {{productResource.value().description}}
     </p>
+    <div class="mt-2">
+      @for (tag of productResource.value().tags; track tag) {
+      <div  class="badge badge-soft badge-primary">
+      {{ tag }}</div>
+      }
+    </div>
+
+
   </div>
 </div>
 }
